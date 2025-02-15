@@ -1,8 +1,14 @@
+$main-colour: white;
+
 body {
   display: flex;
   margin: auto;
+  justify-content: center;
+  background-color: black;
+  color: $main-colour;
 }
 
-div {
-  background-color: red;
+#mainContainer {
+  display: flex;
+  flex-direction: column;
 }

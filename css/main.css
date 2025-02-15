@@ -1,8 +1,12 @@
 body {
   display: flex;
   margin: auto;
+  justify-content: center;
+  background-color: black;
+  color: white;
 }
 
-div {
-  background-color: red;
+#mainContainer {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=main.css.map */
