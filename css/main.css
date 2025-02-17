@@ -32,5 +32,18 @@ body {
 #taskList {
   width: 25%;
   font-size: 1.2em;
+}
+
+.lists {
   background-color: peru;
+  padding: 5px;
+}
+
+.lists:nth-child(even) {
+  background-color: burlywood;
+  color: black;
+}
+
+.removeX {
+  z-index: -1;
 }/*# sourceMappingURL=main.css.map */
