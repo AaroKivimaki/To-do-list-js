@@ -32,6 +32,8 @@ body {
 #taskList {
   width: 25%;
   font-size: 1.2em;
+  padding: 0;
+  padding-right: 50px;
 }
 
 .lists {
@@ -44,6 +46,11 @@ body {
   color: black;
 }
 
-.removeX {
-  z-index: -1;
+.closeButton {
+  font-weight: 100;
+  float: right;
+}
+
+.closeButton:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */
