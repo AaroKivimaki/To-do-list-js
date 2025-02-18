@@ -2,6 +2,8 @@ const addTaskButton = document.getElementById("addButton");
 const textInput = document.getElementById("inputText");
 const addList = document.getElementById("taskList");
 
+let xCount = 0;
+
 addTaskButton.addEventListener("click", () => {
   const newList = document.createElement("li");
   const textInputValue = textInput.value;
@@ -20,9 +22,18 @@ addTaskButton.addEventListener("click", () => {
     addList.appendChild(newList);
     newSpan.appendChild(spanX);
     newList.appendChild(newSpan);
+    newSpan.id = "x" + xCount++;
   }
 
   textInput.value = "";
 });
 
-const removeButton = document.getElementsByClassName("closeButton");
+function removeTask(target) {
+  if (target.classList.contains("closeButton")) {
+    target.parentElement.remove();
+  }
+}
+
+addList.addEventListener("click", function (event) {
+  removeTask(event.target);
+});
