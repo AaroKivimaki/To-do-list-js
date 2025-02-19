@@ -41,16 +41,31 @@ body {
   padding: 5px;
 }
 
+.lists:hover {
+  background-color: rgb(156, 101, 45);
+  cursor: pointer;
+}
+
 .lists:nth-child(even) {
   background-color: burlywood;
   color: black;
 }
 
+.lists:nth-child(even):hover {
+  background-color: rgb(129, 108, 80);
+}
+
 .closeButton {
   font-weight: 100;
   float: right;
+  width: 20px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .closeButton:hover {
   cursor: pointer;
+  background-color: gray;
 }/*# sourceMappingURL=main.css.map */

@@ -37,3 +37,17 @@ function removeTask(target) {
 addList.addEventListener("click", function (event) {
   removeTask(event.target);
 });
+
+function addCheck(target) {
+  if (target.style.textDecoration == "none") {
+    target.style.textDecoration = "line-through"
+    target.style.backgroundColor = "gray"
+  } else {
+    target.style.textDecoration = "none"
+    target.style.backgroundColor = "peru"
+  }
+}
+
+addList.addEventListener("click", function (e) {
+  addCheck(e.target)
+})
