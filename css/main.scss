@@ -43,7 +43,7 @@ body {
   padding: 5px;
 }
 
-.lists:hover{
+.lists:hover {
   background-color: rgb(156, 101, 45);
   cursor: pointer;
 }
@@ -53,11 +53,11 @@ body {
   color: black;
 }
 
-.lists:nth-child(even):hover{
+.lists:nth-child(even):hover {
   background-color: rgb(129, 108, 80);
 }
 
-.closeButton{
+.closeButton {
   font-weight: 100;
   float: right;
   width: 20px;
@@ -67,7 +67,7 @@ body {
   align-items: center;
 }
 
-.closeButton:hover{
+.closeButton:hover {
   cursor: pointer;
-  background-color: gray;
+  background-color: rgb(95, 63, 37);
 }

@@ -11,6 +11,11 @@ addTaskButton.addEventListener("click", () => {
   newList.appendChild(createTextPlace);
 
   newList.classList.add("lists");
+  if (addList.childElementCount % 2 == 0) {
+    newList.classList.add("list1");
+  } else {
+    newList.classList.add("list2");
+  }
 
   const newSpan = document.createElement("span");
   const spanX = document.createTextNode("X");
@@ -40,14 +45,17 @@ addList.addEventListener("click", function (event) {
 
 function addCheck(target) {
   if (target.style.textDecoration == "none") {
-    target.style.textDecoration = "line-through"
-    target.style.backgroundColor = "gray"
+    target.style.textDecoration = "line-through";
+    target.style.backgroundColor = "gray";
+  } else if (target.classList.contains("list1")) {
+    target.style.textDecoration = "none";
+    target.style.backgroundColor = "peru";
   } else {
-    target.style.textDecoration = "none"
-    target.style.backgroundColor = "peru"
+    target.style.textDecoration = "none";
+    target.style.backgroundColor = "burlywood";
   }
 }
 
 addList.addEventListener("click", function (e) {
-  addCheck(e.target)
-})
+  addCheck(e.target);
+});
