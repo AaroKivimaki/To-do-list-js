@@ -1,17 +1,20 @@
 const addTaskButton = document.getElementById("addButton");
 const textInput = document.getElementById("inputText");
-const addList = document.getElementById("taskList");
+const getTable = document.getElementById("mainTable");
+const getTableRow = document.getElementById("mainTableRow");
+const getMainContainer = document.getElementById("mainContainer");
 
 let xCount = 0;
 
 addTaskButton.addEventListener("click", () => {
-  const newList = document.createElement("li");
+  const newTableData = document.createElement("td");
+  const newTableRow = document.createElement("tr");
   const textInputValue = textInput.value;
   const createTextPlace = document.createTextNode(textInputValue);
-  newList.appendChild(createTextPlace);
+  newTableData.appendChild(createTextPlace);
 
   newList.classList.add("lists");
-  if (addList.childElementCount % 2 == 0) {
+  if (getTableRow.childElementCount % 2 == 0) {
     newList.classList.add("list1");
   } else {
     newList.classList.add("list2");
@@ -21,12 +24,22 @@ addTaskButton.addEventListener("click", () => {
   const spanX = document.createTextNode("X");
   newSpan.classList.add("closeButton");
 
+  const createUpAndDownArrowElement = document.createElement("div");
+  const createUpArrow = document.createTextNode("↑");
+  const createDownArrow = document.createTextNode("↓");
+  createUpAndDownArrowElement.classList.add("upAndDownArrows");
+
   if (textInputValue == "") {
     alert("Can't add nothing");
   } else {
-    addList.appendChild(newList);
+    getTableRow.appendChild(newList);
     newSpan.appendChild(spanX);
     newList.appendChild(newSpan);
+
+    newList.appendChild(createUpAndDownArrowElement);
+    createUpAndDownArrowElement.appendChild(createUpArrow);
+    createUpAndDownArrowElement.appendChild(createDownArrow);
+
     newSpan.id = "x" + xCount++;
   }
 
@@ -39,7 +52,7 @@ function removeTask(target) {
   }
 }
 
-addList.addEventListener("click", function (event) {
+getTableRow.addEventListener("click", function (event) {
   removeTask(event.target);
 });
 
@@ -56,6 +69,6 @@ function addCheck(target) {
   }
 }
 
-addList.addEventListener("click", function (e) {
+getTableRow.addEventListener("click", function (e) {
   addCheck(e.target);
 });

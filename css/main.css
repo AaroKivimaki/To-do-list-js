@@ -34,11 +34,14 @@ body {
   font-size: 1.2em;
   padding: 0;
   padding-right: 50px;
+  display: grid;
 }
 
 .lists {
   background-color: peru;
   padding: 5px;
+  width: 480px;
+  display: flex;
 }
 
 .lists:hover {
@@ -58,14 +61,17 @@ body {
 .closeButton {
   font-weight: 100;
   float: right;
-  width: 20px;
-  height: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-grow: 2;
 }
 
 .closeButton:hover {
   cursor: pointer;
   background-color: rgb(95, 63, 37);
+}
+
+.upAndDownArrows {
+  width: 20px;
+  height: 25px;
+  padding-top: 2px;
+  padding-left: 3px;
 }/*# sourceMappingURL=main.css.map */
