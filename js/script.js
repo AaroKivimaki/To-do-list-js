@@ -1,7 +1,8 @@
 const addTaskButton = document.getElementById("addButton");
 const textInput = document.getElementById("inputText");
 const getTable = document.getElementById("mainTable");
-const getTableRow = document.getElementById("mainTableRow");
+let getTableRow = document.getElementById("mainTableRow1");
+let getTableRow2 = document.getElementById("mainTableRow2")
 const getMainContainer = document.getElementById("mainContainer");
 
 let xCount = 0;
@@ -13,11 +14,11 @@ addTaskButton.addEventListener("click", () => {
   const createTextPlace = document.createTextNode(textInputValue);
   newTableData.appendChild(createTextPlace);
 
-  newList.classList.add("lists");
-  if (getTableRow.childElementCount % 2 == 0) {
-    newList.classList.add("list1");
+  newTableData.classList.add("tableDatas");
+  if (newTableData.childElementCount % 2 == 0) {
+    newTableData.classList.add("tableData1");
   } else {
-    newList.classList.add("list2");
+    newTableData.classList.add("tableData2");
   }
 
   const newSpan = document.createElement("span");
@@ -32,15 +33,28 @@ addTaskButton.addEventListener("click", () => {
   if (textInputValue == "") {
     alert("Can't add nothing");
   } else {
-    getTableRow.appendChild(newList);
+    if (!getTableRow) {
+      getTable.appendChild(newTableRow)
+      newTableRow.id = "mainTableRow" + xCount++
+      getTableRow = newTableRow
+    }
+    getTableRow.appendChild(newTableData);
     newSpan.appendChild(spanX);
-    newList.appendChild(newSpan);
+    newTableData.appendChild(newSpan);
 
-    newList.appendChild(createUpAndDownArrowElement);
-    createUpAndDownArrowElement.appendChild(createUpArrow);
-    createUpAndDownArrowElement.appendChild(createDownArrow);
+    if (getTable.childElementCount >= 2) {
+    } else {
+      getTable.appendChild(newTableRow)
+      newTableRow.id = "mainTableRow" + xCount++
+      getTableRow2 = newTableRow
+   }
 
-    newSpan.id = "x" + xCount++;
+    if (textInputValue == "") {
+    } else {
+      getTableRow2.appendChild(createUpAndDownArrowElement);
+      createUpAndDownArrowElement.appendChild(createUpArrow);
+      createUpAndDownArrowElement.appendChild(createDownArrow);
+    }
   }
 
   textInput.value = "";
@@ -52,7 +66,7 @@ function removeTask(target) {
   }
 }
 
-getTableRow.addEventListener("click", function (event) {
+getTable.addEventListener("click", function (event) {
   removeTask(event.target);
 });
 
@@ -60,7 +74,7 @@ function addCheck(target) {
   if (target.style.textDecoration == "none") {
     target.style.textDecoration = "line-through";
     target.style.backgroundColor = "gray";
-  } else if (target.classList.contains("list1")) {
+  } else if (target.classList.contains("tableData1")) {
     target.style.textDecoration = "none";
     target.style.backgroundColor = "peru";
   } else {
@@ -69,6 +83,6 @@ function addCheck(target) {
   }
 }
 
-getTableRow.addEventListener("click", function (e) {
+getTable.addEventListener("click", function (e) {
   addCheck(e.target);
 });

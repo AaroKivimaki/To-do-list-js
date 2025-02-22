@@ -29,39 +29,37 @@ body {
   font-size: 1em;
 }
 
-#taskList {
+#mainTableRow1, mainTableRow2 {
   width: 25%;
   font-size: 1.2em;
   padding: 0;
   padding-right: 50px;
-  display: grid;
 }
 
-.lists {
+.tableDatas {
   background-color: peru;
   padding: 5px;
   width: 480px;
   display: flex;
 }
 
-.lists:hover {
+.tableDatas:hover {
   background-color: rgb(156, 101, 45);
   cursor: pointer;
 }
 
-.lists:nth-child(even) {
+.tableDatas:nth-child(even) {
   background-color: burlywood;
   color: black;
 }
 
-.lists:nth-child(even):hover {
+.tableDatas:nth-child(even):hover {
   background-color: rgb(129, 108, 80);
 }
 
 .closeButton {
   font-weight: 100;
   float: right;
-  flex-grow: 2;
 }
 
 .closeButton:hover {
