@@ -3,6 +3,8 @@ body {
   margin: auto;
   justify-content: center;
   color: white;
+  width: 100%;
+  height: 100%;
 }
 
 #mainContainer {
@@ -29,7 +31,7 @@ body {
   font-size: 1em;
 }
 
-#mainTableRow1, mainTableRow2 {
+#mainTableRow {
   width: 25%;
   font-size: 1.2em;
   padding: 0;
@@ -41,6 +43,7 @@ body {
   padding: 5px;
   width: 480px;
   display: flex;
+  justify-content: space-between;
 }
 
 .tableDatas:hover {
@@ -72,4 +75,13 @@ body {
   height: 25px;
   padding-top: 2px;
   padding-left: 3px;
+}
+
+.checked {
+  text-decoration: line-through;
+  background-color: gray;
+}
+
+.checked:hover {
+  background-color: gray;
 }/*# sourceMappingURL=main.css.map */
