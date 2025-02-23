@@ -85,4 +85,7 @@ function addCheck(target) {
 
 getTable.addEventListener("click", function (e) {
   addCheck(e.target);
+  if (e.target.tagName == "TD") {
+    ev.target.classList.toggle("checked");
+  }
 });
