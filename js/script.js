@@ -2,7 +2,7 @@ const addTaskButton = document.getElementById("addButton");
 const textInput = document.getElementById("inputText");
 const getTable = document.getElementById("mainTable");
 let getTableRow = document.getElementById("mainTableRow1");
-let getTableRow2 = document.getElementById("mainTableRow2")
+let getTableRow2 = document.getElementById("mainTableRow2");
 const getMainContainer = document.getElementById("mainContainer");
 
 let xCount = 0;
@@ -34,9 +34,9 @@ addTaskButton.addEventListener("click", () => {
     alert("Can't add nothing");
   } else {
     if (!getTableRow) {
-      getTable.appendChild(newTableRow)
-      newTableRow.id = "mainTableRow" + xCount++
-      getTableRow = newTableRow
+      getTable.appendChild(newTableRow);
+      newTableRow.id = "mainTableRow" + xCount++;
+      getTableRow = newTableRow;
     }
     getTableRow.appendChild(newTableData);
     newSpan.appendChild(spanX);
@@ -44,10 +44,10 @@ addTaskButton.addEventListener("click", () => {
 
     if (getTable.childElementCount >= 2) {
     } else {
-      getTable.appendChild(newTableRow)
-      newTableRow.id = "mainTableRow" + xCount++
-      getTableRow2 = newTableRow
-   }
+      getTable.appendChild(newTableRow);
+      newTableRow.id = "mainTableRow" + xCount++;
+      getTableRow2 = newTableRow;
+    }
 
     if (textInputValue == "") {
     } else {
