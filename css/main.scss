@@ -20,6 +20,7 @@ body {
 
 #textAddContainer {
   width: auto;
+  padding-bottom: 10px;
 }
 
 #inputText {
@@ -37,14 +38,13 @@ body {
   width: 25%;
   font-size: 1.2em;
   padding: 0;
-  padding-right: 50px;
   //display: grid;
 }
 
 .tableDatas {
   background-color: peru;
   padding: 5px;
-  width: 480px;
+  width: 35vw;
   display: flex;
   justify-content: space-between;
 }
@@ -88,4 +88,22 @@ body {
 
 .checked:hover {
   background-color: gray;
+}
+
+.checked:nth-child(even) {
+  text-decoration: line-through;
+  background-color: gray;
+}
+
+.checked:nth-child(even):hover {
+  background-color: gray;
+}
+
+@media only screen and (max-width: 600px) {
+  .tableDatas {
+    width: 250px;
+  }
+  #textAddContainer {
+    text-align: center;
+  }
 }
